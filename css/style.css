@@ -1,0 +1,249 @@
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+:root{
+    
+    --header-height: 48px;
+    --conteneurMax-width : 1200px;
+    --clr-bg-header : #2E323F;
+    --clr-bg-blue : #3B4050;
+    --clr-bg-lightblue : #6F737F;
+    --clr-bg-gray : #ccc;
+    --clr-txt-primary : #000;
+    --clr-txt-secondary : #fff;
+    --clr-txt-gold : #A59678;
+}
+/* helpers */
+.container{
+    width: 80%;
+    max-width: var(--conteneurMax-width);
+    margin: 0 auto;
+}
+.gap{
+    margin-bottom: 2rem;
+}
+.txtWhite{
+    color: var(--clr-txt-secondary);
+}
+.Oswald{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.bgGold{
+    background-color: var(--clr-txt-gold);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+}
+.bgBlue{
+    background-color: var(--clr-bg-blue);
+}
+.textGold{
+    color: var(--clr-txt-gold);
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+}
+/* header */
+header{
+    background-color: var(--clr-bg-header);
+    height: var(--header-height);
+    padding: 0.5rem;
+    max-height: 100%;
+}
+header #header_content{
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100%;
+
+}
+header ul{
+    display: none;
+}
+header #logo {
+    height: 40px;
+}
+#header_content img {
+max-height: 40px;
+}
+
+header #menu_content.active {
+    top: var(--header-height);
+}
+header #menu_content ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+header #menu_content ul li {
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--clr-txt-secondary);
+    font-weight: bold;
+    font-size: clamp(1rem,1.5vw,18px);
+}
+
+/* blueSection */
+main #blueSection{
+    padding: 3rem 0;
+}
+main #heroTitle h1{
+    font-size: clamp(1rem,7vw,90px);
+    margin-bottom: 2rem;
+
+}
+main #heroTexte p{
+    font-size: clamp(1rem,3vw,24px) ;
+    margin-bottom: 1rem;
+}
+main #heroTexte button{
+    font-size: 24px;
+}
+/* section gray */
+main #graySection{
+    background-color: var(--clr-bg-gray);
+    padding: 1rem 0;
+
+}
+main #graySection .container div{
+    padding-bottom: 1rem;
+}
+main #graySection h2{
+    text-align: center;
+    font-size: clamp(1.5rem,3vw,30px);
+}
+main #graySection p{
+    font-size: clamp(1rem,1.5vw,18px);
+}
+/* section Whyte*/
+main #whiteSection{
+    padding: 1rem 0;
+}
+main #whiteSection h2{
+    padding-bottom: 1rem;
+    font-size: clamp(1.8rem,4vw,36px );
+}
+main #whiteSection img{
+    width: 100%;
+    object-fit: cover;
+    min-width:100% ;
+    object-position: 0 0;
+    height: 50%;
+}
+main #whiteSection p{
+    padding-bottom: 0.5rem;
+    font-size: clamp(1rem,2vw,21px );
+}
+main #blueCard div{
+    margin: 1rem 0;
+    text-align: center;
+    padding: 1rem;
+}
+main #blueCard h3{
+    
+    font-weight: bold;
+    padding-bottom: 3rem;
+    font-size: clamp(1.5rem,3vw,30px );
+
+}
+main #blueCard p{
+    font-size: clamp(1rem,1.5vw,18px);
+}
+/* footer */
+footer h2{
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: clamp(1rem,2vw,24px ) ;
+}
+footer .flex{
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 1rem;
+
+}
+footer p{
+    font-size: clamp(0.5rem,2vw,16px );
+}
+footer ul{
+    list-style: none;
+}
+footer li {
+    padding: 0.5rem 0;
+    font-size: clamp(0.5rem,2vw,16px );
+}
+footer h3{
+    padding: 1rem 0;
+    font-size: clamp(1rem,2vw,21px );
+}
+
+/* media queries */
+@media (max-width: 699px) {
+    header #menu_content {
+        background-color: var(--clr-bg-lightblue);
+        padding: 1rem;
+        position: absolute;
+        top: -250px;
+        right: 20px;
+        transition: top 0.5s ease-out;
+    }
+}
+
+@media (min-width: 700px) {
+    #burger_menu {
+        display: none;
+    }
+    #menu_content {
+        background-color: transparent;
+        position: initial;
+    }
+    header #menu_content ul {
+        flex-direction: row;
+    }
+    main #blueSection .container{
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end;
+    }
+    main #heroTitle{
+        width: 50%;
+    }
+    main #heroTexte{
+        width: 50%;
+        padding-bottom: 2rem;
+    }
+    main #graySection .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+
+    }
+    main #blueCard {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    footer #footer_content {
+        display: flex;
+        gap: 2rem;
+    }
+    
+}
+@media (min-width: 1000px){
+    main #whiteSection{
+        display: flex;
+        gap: 3rem;
+    }
+    main #blueCard{
+        display: block;
+
+    }
+}
